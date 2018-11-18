@@ -1,0 +1,105 @@
+
+.page-header{
+    position: fixed;
+    background: none;
+}
+
+.page-navigation{
+    font-family: 'Open Sans', sans-serif;
+    font-style: bold;
+    font-size: 13px;
+    letter-spacing: 6.7px;
+    color: #ec008c;
+    list-style-type: none;
+}
+
+.page-navigation__items{
+    list-style-type: none;
+    color: #ec008c;
+    position: relative;
+}
+
+.band-members__item{
+    position: relative;
+}
+
+.band-members__name{
+    font-family: 'Open Sans', sans-serif;
+    font-style: bold;
+    font-size: 15px;
+    color: #dbd8fb;
+    letter-spacing: 3.8px;
+}
+
+.band-members__desc{
+    font-family: 'Open Sans', sans-serif;
+    font-style: regular;
+    font-size: 13px;
+    color: #ccc8ff;
+    opacity: 0.5;
+    letter-spacing: 3.5px;
+}
+
+.about-section__img{
+    padding-left: 20px;
+}
+
+.about-section__desc{
+    position: relative;
+    top: -200px;
+    background-color: #25072E;
+    padding: 2%;
+}
+
+.about-section__desc-header{
+    font-family: 'Open Sans', sans-serif;
+    font-style: bold;
+    font-size: 15px;
+    letter-spacing: 3.8px;
+    color: #dbd8fb;
+}
+
+.about-section__desc-body{
+    font-family: 'Open Sans', sans-serif;
+    font-style: regular;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: #ccc8ff;
+    opacity: 0.8;
+}
+
+.content-section__header{
+    padding: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: bold;
+    font-size: 28px;
+    text-align: right;
+    color: #ec008c;
+    letter-spacing: 4.5px;
+}
+
+.concerts__date{
+    text-align: left;
+}
+
+.button{
+    float: right;
+}
+
+.content-section{
+    background-image: url("src/background.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    padding: 20px 20px 20px 20%;
+}
+
+.page-footer{
+    position: fixed;
+    bottom: 100px;
+    left: 20px;
+}
+
+.screen-reader-only{
+    opacity: 0;
+}

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
     <title>6BM</title>
 </head>
 <body>
@@ -28,14 +30,14 @@
                 <li class="page-navigation__item">
                     <a href="#photos">PHOTOS</a>    
                 </li>
-                <li class="mpage-navigation__item">
+                <li class="page-navigation__item">
                     <a href="#contact">CONTACT</a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main class="page-content">
         <section id="home" class="content-section">
             <h2 class="content-section__header screen-reader-only">Home</h2>
             <ul class="band-members">
@@ -64,10 +66,10 @@
 
         <section id="about" class="content-section about-section">
             <h2 class="content-section__header">ABOUT</h2>
-            <img src="src/band01.jpg" alt="Image of band members standing at the construction site">
+            <img class="about-section__img" src="src/band01.jpg" alt="Image of band members standing at the construction site">
             <div class="about-section__desc">
                 <h3 class="about-section__desc-header">STRAIGHT FROM LUBLIN</h3>
-                <p>
+                <p class="about-section__desc-body">
                     6BM is a young band which has it's origins in the city of Lublin, playing music described as electrorock.<br/>
                     Band members aim to convey emotions, reflexion but also hope.<br/><br/>
                     They are inspired by various genres, like: alternative rock, nu-metal, synthwave or even drum'n bass.<br/>
@@ -76,7 +78,7 @@
             </div>
         </section>
 
-        <section id="concerts" class="concert-section">
+        <section id="concerts" class="content-section">
             <h2 class="content-section__header">CONCERTS</h2>
             <div class="concerts">
                 <article class="concerts__item">
