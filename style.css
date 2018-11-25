@@ -1,11 +1,150 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', 'Segoe UI', Tahoma, sans-serif;
+    background-image: url(/src/background.svg);
+    background-attachment: fixed;
+    background-size: cover;
+}
 
 .page-header{
     position: fixed;
     background: none;
 }
 
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ponizej rekomendowany zestaw - tekst niewidoczny dla uzytkownika, a czytniki bedą czytać */
+.screen-reader-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+
+/* sekcja pomocnicza - zeby widzieć pozycje elementów strony
+.page-header {
+    background-color: #ffb1b1;
+}
+
+.page-content {
+    background-color: #b0ffb0;
+}
+
+.page-footer {
+    background-color: #7ba3ff;
+}
+
+.content-section {
+    background-color: #ca9aca;
+}
+.content-section:nth-child(odd) {
+    background-color: #e69fe6;
+}
+ koniec sekcji pomocniczej */
+
+
+/* zablokowanie menu i stopki w jednej pozycji, tak, zeby byly caly czas widoczne */
+.page-header {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+}
+
+.page-footer {
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+}
+
+/* zrobienie miejsca na menu */
+.page-content {
+    margin-left: 220px;
+    padding: 0 10%;
+    text-align: right;
+}
+
+.content-section{
+    min-height: 100vh;
+    display: flex;
+    /* align-items: center; */
+}
+
+.band-members{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.concerts-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.concerts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.video-section{
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+
+.photos-section{
+    display: flex;
+    flex-direction: column;
+    /* justify-items: center; */
+    align-items: flex-end;
+}
+
+.contact-section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.content-section__header{
+    display: block;
+}
+
+.gallery{
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.gallery__item{
+    margin: 5px;
+}
+
+
+
 .page-navigation{
-    font-family: 'Open Sans', sans-serif;
     font-style: bold;
     font-size: 13px;
     letter-spacing: 6.7px;
@@ -24,15 +163,47 @@
 }
 
 .band-members__name{
-    font-family: 'Open Sans', sans-serif;
     font-style: bold;
     font-size: 15px;
     color: #dbd8fb;
     letter-spacing: 3.8px;
 }
 
+
+
+.concerts__date {
+    font-style: bold;
+    font-size: 15px;
+    letter-spacing: 3.8px;
+    color: rgba(204, 200, 255, 0.8);
+    text-align: left;
+}
+
+.concerts__location{
+    font-style: regular;
+    font-size: 13px;
+    color: rgba(204, 200, 255, 0.5);   
+    text-align: left;
+}
+
+.concerts__info-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.concerts__info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.concerts__button{
+    position: relative;
+    top: -60px;
+    left: 200%;
+}
+
 .band-members__desc{
-    font-family: 'Open Sans', sans-serif;
     font-style: regular;
     font-size: 13px;
     color: #ccc8ff;
@@ -46,13 +217,13 @@
 
 .about-section__desc{
     position: relative;
-    top: -200px;
+    top: -150px;
+    right: 150px;
     background-color: #25072E;
     padding: 2%;
 }
 
 .about-section__desc-header{
-    font-family: 'Open Sans', sans-serif;
     font-style: bold;
     font-size: 15px;
     letter-spacing: 3.8px;
@@ -60,7 +231,6 @@
 }
 
 .about-section__desc-body{
-    font-family: 'Open Sans', sans-serif;
     font-style: regular;
     font-size: 13px;
     letter-spacing: 1.5px;
@@ -70,7 +240,6 @@
 
 .content-section__header{
     padding: 20px;
-    font-family: 'Open Sans', sans-serif;
     font-style: bold;
     font-size: 28px;
     text-align: right;
@@ -78,28 +247,49 @@
     letter-spacing: 4.5px;
 }
 
-.concerts__date{
-    text-align: left;
-}
 
 .button{
     float: right;
+    font-style: semibold;
+    font-size: 12px;
+    letter-spacing: 1.6px;
+    color: rgb(219, 216, 251);
+    background-color: rgba(204, 200, 255, 0.1);
+    border: none;
+    padding: 4px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 5px;
 }
 
-.content-section{
-    background-image: url("src/background.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 0px;
-    padding: 20px 20px 20px 20%;
+input {
+    background-color: rgba(204, 200, 255, 0.1);
+    border: none;
+    height: 30px;
+    width: 250px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-.page-footer{
-    position: fixed;
-    bottom: 100px;
-    left: 20px;
+label {
+    font-style: regular;
+    font-size: 13px;
+    color: rgb(219, 216, 251);
 }
 
-.screen-reader-only{
-    opacity: 0;
+.form{
+    align-self: flex-start;
+}
+
+address{
+    font-style: regular;
+    font-size: 13px;
+    color: rgb(219, 216, 251);
+    text-decoration: none;
+}
+
+.box{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
 }
