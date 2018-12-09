@@ -73,6 +73,11 @@ a {
     text-decoration: none;
 }
 
+::selection{
+    background: #EF008E;
+    color: #25072e;
+}
+
 /* 
 ######################################
 PRZYCISKI
@@ -82,15 +87,31 @@ PRZYCISKI
 .button {
     padding: 7px 15px;
     border-radius: 3px;
-    background-color: rgba(204, 200, 255, 0.1);
+    background-color: rgba(37, 7, 46, 0.1);
     border-color: rgba(204, 200, 255, 0.1);
 
     color: rgba(204, 200, 255, 0.8);
     font-size: 12px;
-    font-weight: 600;
+    font-weight: semibold;
     text-transform: uppercase;
     letter-spacing: 1.6px;
     cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.button:hover {
+    font-family: Helvetica, sans-serif;
+    font-weight: regular;
+    background-color: rgba(204, 200, 255, 0.1);
+}
+
+.button:active {
+    font-family: Helvetica, sans-serif;
+    font-weight: regular;
+}
+
+.button:focus{
+    border-color: rgba(204, 200, 255, 0.1);
 }
 
 /* 
@@ -116,6 +137,12 @@ FORMULARZE
     border: none;
     border-radius: 4px;
     background-color: rgba(219, 216, 251, 0.1);
+}
+
+@media screen and ( max-width: 1024px ) {
+    .form__input {
+        width: 100%;
+    }
 }
 
 /* 
@@ -159,9 +186,18 @@ Właściwość "text-align: right" przykleja zawartość do prawej strony
     padding: 0 10%;
 }
 
-@media screen and (max-width: 320px){
+@media screen and ( max-width: 1280px ) {
+    .page-header {
+        position: static;
+        padding: 30px 0;
+        text-align: center;
+    }
     .page-content {
-        margin: 10px;
+        margin-left: 0;
+    }
+
+    .page-footer {
+        position: static;
     }
 }
 
@@ -173,6 +209,11 @@ NAWIGACJA
 
 .page-navigation__items {
     padding-top: 15px;
+    letter-spacing: 6.7px;
+    text-transform: uppercase;
+    line-height: 25px;
+    opacity: 0.8;
+    transition: all 0.5s ease-in-out;
 }
 
 .page-navitagion__item a {
@@ -182,20 +223,74 @@ NAWIGACJA
     letter-spacing: 6.7px;
 }
 
+.page-navigation__item:hover {
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    opacity: 1.0;
+}
+
+.page-navigation__item:active {
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    opacity: 1.0;
+}
+
+.page-navigation__item:disabled {
+    opacity: 0.4;
+}
+
+.page-navigation__item:focus {
+    opacity: 1.0;
+}
+
+@media screen and ( min-width: 1025px ) and ( max-width: 1280px ) {
+    .page-navigation__item {
+        display: inline-block;
+    }
+
+    .page-navigation__item {
+        margin: 0 20px;
+    }
+}
+
 /* 
 ######################################
 LINKI DO SOCIAL MEDIA
 ######################################
 */
 
-
 .social-links__item + .social-links__item {
     margin-top: 15px;
 }
 
-.social-links__item img {
+.social-media__img {
     width: 20px;
     height: 20px;
+    opacity: 0.8;
+    transition: all 0.5s ease-in-out;
+}
+.social-links__item:hover .social-media__img {
+    opacity: 1.0;
+}
+
+.social-links__item:focus .social-media__img {
+    opacity: 1.0;
+}
+
+@media screen and ( max-width: 1280px ) {
+    .social-links {
+        text-align: center;
+        padding: 30px 0;
+    }
+
+    .social-links__item {
+        display: inline-block;
+    }
+
+    .social-links__item + .social-links__item {
+        margin-top: 0;
+        margin-left: 15px;
+    }
 }
 
 /* 
@@ -238,6 +333,13 @@ Więcej szczegółów na temat działania Flexbox można znaleźć na: https://c
     min-height: 100vh;
 }
 
+@media screen and ( max-width: 1024px ) {
+    .content-section {
+        min-height: 0;
+        padding-bottom: 100px;
+    }
+}
+
 .content-section__header {
     margin-bottom: 60px;
     color: #EF008E;
@@ -271,22 +373,9 @@ SEKCJA "HOME"
     justify-content: space-around;
 }
 
-@media screen and (max-width: 1366px){
-    .band-members__item{
-        flex-basis: 50%;
-        padding: 10px 10px 0 0;
-    }
-}
-
-@media screen and (max-width: 320px){
-    .band-members{
-        flex-direction: column;
-        justify-content: flex-end;
-    }
-
-    .band-members__item{
-        flex-basis: 30%;
-    }
+.band-members__image{
+    opacity: 0.5;
+    transition: all 0.5s ease-in-out;
 }
 
 /*
@@ -294,7 +383,59 @@ Tymczasowo ukrywamy tę sekcję, zajmiemy się nią na następnych zajęciach.
 */
 .band-members__name,
 .band-members__desc {
-    display: none;
+    opacity: 0;
+    margin: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.band-members__name{
+    color: #CCC8FF;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3.8px;
+}
+
+.band-members__desc {
+    letter-spacing: 3.5px;
+}
+
+.band-members__item:hover .band-members__image{
+    opacity: 1.0;
+}
+
+.band-members__item:hover .band-members__name {
+    opacity: 1.0;
+}
+
+.band-members__item:hover .band-members__desc {
+    opacity: 1.0;
+}
+
+
+@media screen and ( min-width: 1025px ) and ( max-width: 1280px ) {
+    .content-section.home-section {
+        justify-content: flex-start;
+        padding-top: 20vh;
+    }
+}
+
+@media screen and ( max-width: 1024px ) {
+    .band-members {
+        flex-direction: column;
+    }
+
+    .band-members__image {
+        margin: 50px 0 10px;
+        opacity: 1.0;
+    }
+
+    .band-members__name,
+    .band-members__desc {
+        display: block;
+        text-align: center;
+        opacity: 1.0;
+    }
 }
 
 /* 
@@ -346,25 +487,15 @@ podane przy pozycjonowaniu "about_desc".
     border-bottom: 3px solid #EF008E;
 }
 
-@media screen and (max-width: 320px){
-    .about{
-        position: relative;
-        display: flex;
-        margin-left: 0;
-        margin-bottom: 0;
-        max-width: 100%;
+@media screen and ( max-width: 1024px ) {
+    .about {
+        margin: 0;
     }
 
-    .about__image {
-        min-width: 100%;
-        height: 150px;;
-    }
     .about__desc {
-        position: relative;
-        bottom: -140px;
-        left: -240px;
-        min-width: 200px;
-
+        position: static;
+        width: 100%;
+        margin-top: 20px;
     }
 }
 
@@ -416,15 +547,14 @@ SEKCJA "CONCERTS"
     letter-spacing: 3.8px;
 }
 
-@media screen and (max-width: 1366px){
+@media screen and ( max-width: 1024px ) {
     .concerts {
-        width: 90%;
+        display: block;
+        width: auto;
     }
-}
 
-@media screen and (max-width: 320px){
-    .concerts {
-        width: 100%;
+    .concerts__item {
+        padding-left: 0;
     }
 }
 
@@ -439,16 +569,9 @@ SEKCJA "VIDEO"
     max-width: 850px;
 }
 
-@media screen and (max-width: 1366px){
-    .embedded-video {
-        width: 90%;
-    }
-}
-
-@media screen and (max-width: 320px){
+@media screen and ( max-width: 1024px ) {
     .embedded-video {
         max-width: 100%;
-        height: 220px;
     }
 }
 
@@ -469,6 +592,7 @@ SEKCJA "PHOTOS"
 .gallery__item {
     flex-basis: 33.3%;
     padding: 0 0 20px 20px;
+    transition: all 0.5s ease-in-out;
 }
 
 .gallery__image {
@@ -477,24 +601,18 @@ SEKCJA "PHOTOS"
     border-top: 3px solid #EF008E;
 }
 
-@media screen and (max-width: 1366px){
-    .gallery {
-        width: 90%;
-    }
-    
-    .gallery__item {
-        flex-basis: 50%;
-    }
-    
-    .gallery__image {
-        min-width: 300px;
-    }  
+.gallery__item:hover {
+    transform: scale(1.05);
 }
 
-@media screen and (max-width: 320px){
+@media screen and ( max-width: 1024px ) {
+    .gallery {
+        display: block;
+        width: auto;
+    }
 
-    .gallery__image {
-        min-width: 220px;
+    .gallery__item {
+        padding-left: 0;
     }
 }
 
@@ -518,30 +636,29 @@ SEKCJA "CONTACT"
 .contact__address {
     padding: 70px;
     font-style: normal;
+    letter-spacing: 3.5px;
 }
 
 .contact__form {
     flex-basis: 50%;
     padding-top: 40px;
+    letter-spacing: 1.5px;
 }
 
 .contact__form .button {
     margin-top: 20px;
 }
 
-@media screen and (max-width: 320px){
-    .contact__image img {
-        max-width: 100%;
-        margin-left: 15px;
-    }
-
-    .contact__form {
-        max-width: 140px;
-        margin-left: 15px;
-        margin-bottom: 50px;
+@media screen and ( max-width: 1024px ) {
+    .contact {
+        display: block;
     }
 
     .contact__address {
-        padding: 15px;
+        padding: 30px 0 0;
+    }
+
+    .contact__form {
+        padding-top: 30px;
     }
 }
